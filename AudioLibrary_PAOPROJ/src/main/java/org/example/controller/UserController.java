@@ -1,67 +1,79 @@
 package org.example.controller;
 
-
-
 import lombok.Getter;
-import lombok.Setter;
+import org.example.model.User;
 import org.example.service.UserService;
 import org.example.service.UserServiceImpl;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserController {
-    private final UserService userService;
+    private final UserService userService = new UserServiceImpl();
+    private final Scanner scanner = new Scanner(System.in);
+
     @Getter
-    @Setter
-    private boolean loggedIn;
+    private User currentUser;
 
-    public UserController() {
-        this.userService = new UserServiceImpl();
-        this.loggedIn = false;
+    public void registerUser() {
+        System.out.println("Enter username:");
+        String username = scanner.nextLine();
+        System.out.println("Enter password:");
+        String password = scanner.nextLine();
+        boolean success = userService.register(username, password);
+        if (success) {
+            System.out.println("User registered successfully");
+        } else {
+            System.out.println("Failed to register user");
+        }
     }
 
-
-    public void promoteUser(Scanner scanner) {
-        if (!loggedIn) {
-            System.out.println("You must login first.");
-            return;
-        }
-        System.out.print("Enter username to promote: ");
+    public void loginUser() {
+        System.out.println("Enter username:");
         String username = scanner.nextLine();
-        userService.promoteUser(username);
-        System.out.println("User promoted to ADMIN role.");
+        System.out.println("Enter password:");
+        String password = scanner.nextLine();
+        User user = userService.login(username, password);
+        if (user != null) {
+            currentUser = user;
+            System.out.println("Login successful");
+        } else {
+            System.out.println("Invalid username or password");
+        }
     }
 
-    public void demoteUser(Scanner scanner) {
-        if (!loggedIn) {
-            System.out.println("You must login first.");
-            return;
+    public void promoteUserToAdmin() {
+        if (currentUser != null && "ADMIN".equals(currentUser.getRole())) {
+            System.out.println("Enter username to promote:");
+            String username = scanner.nextLine();
+            userService.promoteUser(username);
+            System.out.println(username + " promoted to admin");
+        } else {
+            System.out.println("Only ADMIN users can promote other users");
         }
-        System.out.print("Enter username to demote: ");
-        String username = scanner.nextLine();
-        userService.demoteUser(username);
-        System.out.println("User demoted to USER role.");
+    }
+
+    public void demoteUserToUser() {
+        if (currentUser != null && "ADMIN".equals(currentUser.getRole())) {
+            System.out.println("Enter username to demote:");
+            String username = scanner.nextLine();
+            userService.demoteUser(username);
+            System.out.println(username + " demoted to user");
+        } else {
+            System.out.println("Only ADMIN users can demote other users");
+        }
     }
 
     public void showAllUsers() {
-        if (!loggedIn) {
-            System.out.println("You must login first.");
-            return;
+        List<User> users = userService.showAllUsers();
+        System.out.println("All users:");
+        for (User user : users) {
+            System.out.println(user.getUsername() + " - " + user.getRole());
         }
-        userService.showAllUsers();
     }
 
-    public void logout() {
-        if (!loggedIn) {
-            System.out.println("You are not logged in.");
-            return;
-        }
-        loggedIn = false;
-        System.out.println("Logout successful!");
-    }
-
-    public boolean isLoggedIn() {
-        return userService.isLoggedIn();
+    public void logoutUser() {
+        // Implementare logout dacă e necesar, în funcție de context
     }
 
 }

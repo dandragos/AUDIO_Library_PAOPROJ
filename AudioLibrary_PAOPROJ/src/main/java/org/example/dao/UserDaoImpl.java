@@ -1,5 +1,6 @@
 package org.example.dao;
 
+import org.example.dao.UserDao;
 import org.example.model.User;
 
 import java.sql.*;
@@ -7,18 +8,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/audiolib";
+    private static final String URL = "jdbc:mysql://localhost:3306/audiolib";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "dragos12";
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void register(User user) {
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users (username, password, role) VALUES (?, ?, ?)")) {
-            preparedStatement.setString(1, user.getUsername());
-            preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setString(3, user.getRole());
-            preparedStatement.executeUpdate();
+        String query = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getPassword());
+            stmt.setString(3, user.getRole());
+            stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -26,14 +36,14 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User login(String username, String password) {
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?")) {
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                String role = resultSet.getString("role");
-                return new User(username, password, role);
+        String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new User(rs.getString("username"), rs.getString("password"), rs.getString("role"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,10 +53,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void promoteToAdmin(String username) {
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE users SET role = 'ADMIN' WHERE username = ?")) {
-            preparedStatement.setString(1, username);
-            preparedStatement.executeUpdate();
+        String query = "UPDATE users SET role = 'ADMIN' WHERE username = ?";
+        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, username);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -54,10 +65,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void demoteToUser(String username) {
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE users SET role = 'USER' WHERE username = ?")) {
-            preparedStatement.setString(1, username);
-            preparedStatement.executeUpdate();
+        String query = "UPDATE users SET role = 'USER' WHERE username = ?";
+        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, username);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -66,14 +78,12 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT * FROM users")) {
-            while (resultSet.next()) {
-                String username = resultSet.getString("username");
-                String password = resultSet.getString("password");
-                String role = resultSet.getString("role");
-                users.add(new User(username, password, role));
+        String query = "SELECT * FROM users";
+        try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                users.add(new User(rs.getString("username"), rs.getString("password"), rs.getString("role")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
