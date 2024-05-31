@@ -11,7 +11,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean register(String username, String password) {
+        if (userDao.getUserByUsername(username) != null) {
+            System.out.println("Username already exists. Please choose another one.");
+            return false;
+        }
+        
         if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+            System.out.println("Valorile nu pot fi null!");
             return false;
         }
         User user = new User(username, password, "USER");

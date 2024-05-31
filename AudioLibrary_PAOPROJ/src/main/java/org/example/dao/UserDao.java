@@ -11,4 +11,5 @@ public interface UserDao {
     void promoteToAdmin(String username);
     void demoteToUser(String username);
     List<User> getAllUsers();
+    User getUserByUsername(String username);
 }

@@ -1,0 +1,28 @@
+{"username":"admin","timestamp":"2024-05-31 15:58:31","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 15:58:36","command":"promote","output":"Dummy promoted to admin"}
+
+{"username":"admin","timestamp":"2024-05-31 15:58:39","command":"demote","output":"Dummy demoted to user"}
+
+{"username":"admin","timestamp":"2024-05-31 15:58:41","command":"showAllUsers","output":"Displayed all users"}
+
+{"username":"admin","timestamp":"2024-05-31 16:00:34","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:01:30","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:03:15","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:06:12","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:08:08","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:11:38","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:12:36","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:13:37","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:15:30","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:17:52","command":"login","output":"Login successful"}
+

@@ -50,10 +50,13 @@ public class Main {
                         userController.showAllUsers();
                         break;
                     case 4:
+                        userController.auditUserCommands();
+                        break;
+                    case 5:
                         userController.logoutUser();
                         loggedIn = false;
                         break;
-                    case 5:
+                    case 6:
                         exit = true;
                         break;
                     default:
@@ -85,31 +88,6 @@ public class Main {
                 }
 
             }
-//            else {
-//                printLoggedInMenu();
-//                int option = scanner.nextInt();
-//                scanner.nextLine(); // Consume newline
-//                switch (option) {
-//                    case 1:
-//                        userController.promoteUserToAdmin();
-//                        break;
-//                    case 2:
-//                        userController.demoteUserToUser();
-//                        break;
-//                    case 3:
-//                        userController.showAllUsers();
-//                        break;
-//                    case 4:
-//                        userController.logoutUser();
-//                        loggedIn = false;
-//                        break;
-//                    case 5:
-//                        exit = true;
-//                        break;
-//                    default:
-//                        System.out.println("Invalid option");
-//                }
-//            }
         }
         scanner.close();
     }
@@ -126,8 +104,9 @@ public class Main {
         System.out.println("1. Promote User to ADMIN");
         System.out.println("2. Demote ADMIN to uSER");
         System.out.println("3. Show all users");
-        System.out.println("3. Logout");
-        System.out.println("4. Exit");
+        System.out.println("4. Read User audit");
+        System.out.println("5. Logout");
+        System.out.println("6. Exit");
         System.out.println("Choose an option:");
     }
 
@@ -143,26 +122,6 @@ public class Main {
         User currentUser = userController.getCurrentUser();
         return currentUser.getRole();
     }
-
-
-
-//    private static void printLoggedInMenu() {
-//        User currentUser = userController.getCurrentUser();
-//
-//        if (currentUser!= null){
-//            System.out.println(currentUser.getRole());
-//        }
-//
-//        if (currentUser != null && "ADMIN".equals(currentUser.getRole())) {
-//            System.out.println("1. Promote User to ADMIN");
-//            System.out.println("2. Demote ADMIN to User");
-//        }
-//
-//        System.out.println("3. Show All Users");
-//        System.out.println("4. Logout");
-//        System.out.println("5. Exit");
-//        System.out.println("Choose an option:");
-//    }
 
 
 }
