@@ -26,3 +26,25 @@
 
 {"username":"admin","timestamp":"2024-05-31 16:17:52","command":"login","output":"Login successful"}
 
+{"username":"Dummy","timestamp":"2024-05-31 16:54:31","command":"login","output":"Login successful"}
+
+{"username":"MD","timestamp":"2024-05-31 16:55:06","command":"register","output":"User registered successfully"}
+
+{"username":"MD","timestamp":"2024-05-31 16:55:10","command":"login","output":"Login successful"}
+
+{"username":"MD","timestamp":"2024-05-31 16:55:16","command":"showAllUsers","output":"Displayed all users"}
+
+{"username":"MD","timestamp":"2024-05-31 16:55:24","command":"logout","output":"User logged out"}
+
+{"username":"admin","timestamp":"2024-05-31 16:55:29","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:58:09","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 16:59:09","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 17:00:08","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 17:00:46","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-05-31 17:01:17","command":"logout","output":"User logged out"}
+

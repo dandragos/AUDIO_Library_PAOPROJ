@@ -102,7 +102,7 @@ public class Main {
     private static void printAdminMenu() {
         System.out.println("Welcome to the admin menu!");
         System.out.println("1. Promote User to ADMIN");
-        System.out.println("2. Demote ADMIN to uSER");
+        System.out.println("2. Demote ADMIN to User");
         System.out.println("3. Show all users");
         System.out.println("4. Read User audit");
         System.out.println("5. Logout");

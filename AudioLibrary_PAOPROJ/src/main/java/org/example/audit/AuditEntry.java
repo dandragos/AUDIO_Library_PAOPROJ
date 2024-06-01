@@ -18,12 +18,12 @@ public class AuditEntry {
 
     @Override
     public String toString() {
-        return "AuditEntry{" +
-                "username='" + username + '\'' +
-                ", timestamp=" + timestamp +
-                ", command='" + command + '\'' +
-                ", output='" + output + '\'' +
-                '}';
+        return "LOG: " + "\n" +
+                "username='" + username + '\'' + " | " +
+                " timestamp=" + timestamp + " | " +
+                " command='" + command + '\'' +" | " +
+                " output='" + output + '\'' +
+                ' ';
     }
 
 
