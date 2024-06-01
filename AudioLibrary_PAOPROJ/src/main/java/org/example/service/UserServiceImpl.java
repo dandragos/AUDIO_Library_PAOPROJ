@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void logout() {
-        // Implementare logout dacă e necesar, în funcție de context
+
     }
 
     @Override

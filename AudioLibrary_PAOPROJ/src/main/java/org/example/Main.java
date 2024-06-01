@@ -18,7 +18,7 @@ public class Main {
             if (!loggedIn) {
                 printLoginMenu();
                 int option = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine();
                 switch (option) {
                     case 1:
                         userController.registerUser();
@@ -59,6 +59,16 @@ public class Main {
                     case 6:
                         exit = true;
                         break;
+
+                    case 7:
+                        userController.createSong();
+                        break;
+
+
+                    case 8:
+                        playlistmenu();
+                        break;
+
                     default:
                         System.out.println("Invalid option");
 
@@ -71,17 +81,25 @@ public class Main {
                 scanner.nextLine();
                 switch (option){
                     case 1:
-                        userController.showAllUsers();
+                        userController.searchSong();
                         break;
                     case 2:
                         userController.logoutUser();
                         loggedIn = false;
                         break;
 
-
                     case 3:
-                        exit = true;
+                        playlistmenu();
                         break;
+
+                    case 4:
+                        userController.showAllSongs();
+                        break;
+                    case 5:
+                        exit=true;
+                        break;
+
+
 
                     default:
                         System.out.println("Invalid option");
@@ -106,21 +124,66 @@ public class Main {
         System.out.println("3. Show all users");
         System.out.println("4. Read User audit");
         System.out.println("5. Logout");
-        System.out.println("6. Exit");
+        System.out.println("6. Playlists");
+        System.out.println("7. Create song");
+        System.out.println("8. Playlists");
         System.out.println("Choose an option:");
     }
 
     private static void printUserMenu() {
         System.out.println("Welcome to the USER menu!");
-        System.out.println("1. Show all users");
+        System.out.println("1. Search song");
         System.out.println("2. Logout");
-        System.out.println("3. Exit");
+        System.out.println("3. Playlist");
+        System.out.println("4. Show all songs");
+        System.out.println("5. Exit");
         System.out.println("Choose an option:");
     }
+
+    private static void printPlaylistMenu() {
+        System.out.println("Playlist menu:");
+        System.out.println("1. Show your playlists");
+        System.out.println("2. Create new playlist");
+        System.out.println("3. Add songs to your playlist");
+        System.out.println("4. Export your playlis");
+        System.out.println("5. Delete a playlist");
+        System.out.println("5. Exit");
+        System.out.println("Choose an option:");
+    }
+
+
 
     private static String userRole (){
         User currentUser = userController.getCurrentUser();
         return currentUser.getRole();
+    }
+
+    private static void playlistmenu(){
+        printPlaylistMenu();
+        int option = scanner.nextInt();
+        scanner.nextLine();
+        switch (option){
+            case 1:
+                userController.showUserPlaylists();
+                break;
+            case 2:
+                userController.createPlaylist();
+                break;
+            case 3:
+                userController.addToPlaylist();
+                break;
+
+            case 4:
+                userController.exportPlaylist();
+                break;
+
+            case 5:
+                userController.deletePlaylist();
+                break;
+
+            default:
+                System.out.println("Invalid Option!");
+        }
     }
 
 

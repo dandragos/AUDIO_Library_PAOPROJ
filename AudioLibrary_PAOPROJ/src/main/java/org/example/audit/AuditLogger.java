@@ -23,7 +23,7 @@ public class AuditLogger {
                 .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
                 .create();
 
-        String json = gson.toJson(entry) + "\n"; // Adăugăm un caracter de linie nouă
+        String json = gson.toJson(entry) + "\n";
 
         try (FileWriter writer = new FileWriter(AUDIT_FILE_PATH, true)) {
             writer.append(json).append("\n");
@@ -44,15 +44,15 @@ public class AuditLogger {
                     .create();
             Type listType = new TypeToken<List<AuditEntry>>() {}.getType();
 
-            int entriesAdded = 0; // Variabilă pentru a urmări câte înregistrări am adăugat pe pagină
+            int entriesAdded = 0;
             while ((line = reader.readLine()) != null && entriesAdded < endIndex) {
-                if (!line.trim().isEmpty()) { // Verificare dacă linia nu este goală
+                if (!line.trim().isEmpty()) {
                     AuditEntry entry = gson.fromJson(line, AuditEntry.class);
                     if (entry != null && entry.getUsername().equals(username)) {
                         if (entriesAdded >= startIndex) {
                             userAuditEntries.add(entry);
                         }
-                        entriesAdded++; // Incrementăm numărul de înregistrări adăugate
+                        entriesAdded++;
                     }
                 }
             }

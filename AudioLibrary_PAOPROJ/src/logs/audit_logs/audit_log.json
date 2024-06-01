@@ -48,3 +48,151 @@
 
 {"username":"admin","timestamp":"2024-05-31 17:01:17","command":"logout","output":"User logged out"}
 
+{"username":"admin","timestamp":"2024-06-01 17:11:49","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-06-01 17:12:34","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-06-01 17:13:43","command":"login","output":"Login successful"}
+
+{"username":"dummy","timestamp":"2024-06-01 17:23:17","command":"login","output":"Login successful"}
+
+{"username":"dummy","timestamp":"2024-06-01 17:24:03","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-06-01 17:25:13","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-06-01 17:26:25","command":"login","output":"Login successful"}
+
+{"username":"dummy","timestamp":"2024-06-01 17:27:09","command":"login","output":"Login successful"}
+
+{"username":"Dummy","timestamp":"2024-06-01 17:27:16","command":"logout","output":"User logged out"}
+
+{"username":"a","timestamp":"2024-06-01 17:27:19","command":"register","output":"User registered successfully"}
+
+{"username":"admin","timestamp":"2024-06-01 17:27:27","command":"login","output":"Login successful"}
+
+{"username":"admin","timestamp":"2024-06-01 17:27:30","command":"promote","output":"a promoted to admin"}
+
+{"username":"admin","timestamp":"2024-06-01 17:27:33","command":"logout","output":"User logged out"}
+
+{"username":"a","timestamp":"2024-06-01 17:27:35","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 17:27:38","command":"showAllUsers","output":"Displayed all users"}
+
+{"username":"a","timestamp":"2024-06-01 17:28:00","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 17:28:03","command":"register","output":"User registered successfully"}
+
+{"username":"b","timestamp":"2024-06-01 17:28:05","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 17:28:31","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:29:06","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:32:56","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:33:24","command":"logout","output":"User logged out"}
+
+{"username":"a","timestamp":"2024-06-01 17:34:25","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:35:34","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 17:36:00","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:36:50","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 17:45:40","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:46:07","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:46:28","command":"logout","output":"User logged out"}
+
+{"username":"a","timestamp":"2024-06-01 17:46:30","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 17:47:15","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 17:47:17","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:48:34","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:49:07","command":"logout","output":"User logged out"}
+
+{"username":"a","timestamp":"2024-06-01 17:49:09","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 17:49:31","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:11:29","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:11:54","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 18:11:57","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:12:44","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:13:17","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 18:13:18","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 18:13:31","command":"logout","output":"User logged out"}
+
+{"username":"a","timestamp":"2024-06-01 18:13:34","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:13:46","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:13:53","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 18:13:55","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 18:14:04","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 18:17:49","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 18:20:49","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:23:29","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 18:24:03","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 18:24:10","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:05:11","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:05:25","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:06:52","command":"login","output":"Login successful"}
+
+{"username":"a","timestamp":"2024-06-01 22:08:24","command":"login","output":"Login successful"}
+
+{"username":"Dummy","timestamp":"2024-06-01 22:08:40","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:08:51","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:12:23","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:13:22","command":"logout","output":"User logged out"}
+
+{"username":"Dummy","timestamp":"2024-06-01 22:13:27","command":"login","output":"Login successful"}
+
+{"username":"Dummy","timestamp":"2024-06-01 22:13:56","command":"logout","output":"User logged out"}
+
+{"username":"b","timestamp":"2024-06-01 22:13:59","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:20:28","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:27:21","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:30:14","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:40:10","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:48:57","command":"login","output":"Login successful"}
+
+{"username":"b","timestamp":"2024-06-01 22:49:00","command":"Show all songs","output":"Showed all songs "}
+
+{"username":"b","timestamp":"2024-06-01 22:49:12","command":"Export playlist","output":"Exported playlist Test1"}
+
+{"username":"b","timestamp":"2024-06-01 22:49:21","command":"Added song (ID): ","output":"Song{id\u003d1, artistName\u003d\u0027a\u0027, songName\u003d\u00271\u0027, albumName\u003d\u00271\u0027, releaseYear\u003d\u00271\u0027}toTest"}
+
+{"username":"b","timestamp":"2024-06-01 22:49:29","command":"Added song (ID): ","output":"Song{id\u003d8, artistName\u003d\u0027b\u0027, songName\u003d\u00271\u0027, albumName\u003d\u00271\u0027, releaseYear\u003d\u00271\u0027}toTest1"}
+
+{"username":"b","timestamp":"2024-06-01 22:49:33","command":"logout","output":"User logged out"}
+
